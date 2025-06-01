@@ -1,6 +1,6 @@
 # Todo App
 
-A modern, responsive Todo application built with React and Vite, featuring a clean design and smooth user experience.
+A modern, responsive Todo application built with React and Vite, featuring a clean design and smooth user experience. This application demonstrates best practices in React development, state management, and local storage integration.
 
 ![Todo App Screenshot 1](images/SS%20(1).png)
 ![Todo App Screenshot 2](images/SS%20(2).png)
@@ -10,22 +10,39 @@ A modern, responsive Todo application built with React and Vite, featuring a cle
 
 ## Features
 
-- ✨ Clean and modern UI design
+### Core Functionality
+- ✨ Add, remove, and mark tasks as complete
+- ✅ Input validation to prevent empty tasks
+- 🔄 Dynamic task list updates
+- 🗑️ Delete individual tasks
+- 🧹 Clear all completed tasks
+
+### Data Persistence
+- 💾 Automatic saving of todos to localStorage
+- 🌓 Theme preference persistence
+- 🔄 State restoration on page reload
+
+### Task Management
+- 🔍 Filter tasks by status (All, Active, Completed)
+- 📋 Sort tasks by completion status
+- ✏️ Edit task functionality
+- ✅ Mark tasks as complete/incomplete
+
+### User Interface
 - 🌓 Light/Dark theme toggle
 - 📱 Fully responsive design
-- ✅ Add, complete, and delete todos
-- 🔍 Filter todos by status (All, Active, Completed)
-- 🧹 Clear completed todos
-- 💾 Persistent theme preference
 - 🎨 Smooth animations and transitions
+- 🖥️ Desktop and mobile optimized layouts
+- 🎯 Touch-friendly interface
 
 ## Technologies Used
 
 - React 18
 - Vite
 - CSS3 with CSS Variables
-- Local Storage for theme persistence
+- Local Storage API
 - Modern JavaScript (ES6+)
+- React Hooks (useState, useEffect)
 
 ## Getting Started
 
@@ -59,11 +76,11 @@ npm run dev
 ```
 todo-app/
 ├── src/
-│   ├── App.jsx
-│   ├── App.css
-│   └── main.jsx
+│   ├── App.jsx          # Main application component
+│   ├── App.css          # Styling and animations
+│   └── main.jsx         # Application entry point
 ├── public/
-│   └── images/
+│   └── images/          # Static assets and icons
 ├── index.html
 └── package.json
 ```
@@ -77,21 +94,55 @@ todo-app/
 
 ## Features in Detail
 
-### Theme Toggle
-- Smooth transition between light and dark themes
-- Theme preference is saved in local storage
-- Custom background images for both themes
+### Data Persistence
+- Todos are automatically saved to localStorage
+- Theme preference is persisted across sessions
+- State is restored on page reload
+- Smooth data synchronization
 
-### Todo Management
-- Add new todos with a clean input interface
-- Mark todos as complete with a satisfying check animation
-- Delete todos with a hover-reveal delete button
-- Filter todos by their completion status
+### Task Management
+- Add new todos with input validation
+- Mark todos as complete with check animation
+- Delete todos with hover-reveal button
+- Filter todos by completion status
+- Clear all completed todos at once
+
+### Theme System
+- Smooth transition between light and dark themes
+- Theme preference saved in localStorage
+- Custom background images for both themes
+- Consistent styling across all components
 
 ### Responsive Design
 - Optimized for both desktop and mobile devices
 - Adaptive layout changes for different screen sizes
 - Touch-friendly interface for mobile users
+- Consistent experience across devices
+
+## Testing
+
+To test the application:
+
+1. **Task Management**
+   - Add a new task and verify it appears in the list
+   - Mark a task as complete and verify the styling changes
+   - Delete a task and verify it's removed
+   - Clear completed tasks and verify they're all removed
+
+2. **Data Persistence**
+   - Add some tasks
+   - Refresh the page and verify tasks are still there
+   - Change theme and refresh to verify theme preference
+
+3. **Filtering**
+   - Add multiple tasks
+   - Mark some as complete
+   - Test all filter options (All, Active, Completed)
+
+4. **Responsive Design**
+   - Test on different screen sizes
+   - Verify touch interactions on mobile devices
+   - Check theme toggle functionality
 
 ## Contributing
 

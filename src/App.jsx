@@ -3,7 +3,10 @@ import './App.css'
 
 function App() {
   const [theme, setTheme] = useState('light')
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem('todos')
+    return savedTodos ? JSON.parse(savedTodos) : []
+  })
   const [inputValue, setInputValue] = useState('')
   const [filter, setFilter] = useState('all')
 
@@ -12,6 +15,11 @@ function App() {
     setTheme(savedTheme)
     document.documentElement.setAttribute('data-theme', savedTheme)
   }, [])
+
+  // Save todos to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'

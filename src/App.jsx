@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
+// Initialize theme immediately
+const savedTheme = localStorage.getItem('theme') || 'light'
+document.documentElement.setAttribute('data-theme', savedTheme)
+
 function App() {
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem('theme')
-    return savedTheme || 'light'
-  })
+  const [theme, setTheme] = useState(savedTheme)
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem('todos')
     return savedTodos ? JSON.parse(savedTodos) : []
